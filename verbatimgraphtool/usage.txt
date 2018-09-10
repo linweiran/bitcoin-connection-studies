@@ -21,6 +21,3 @@ Every thing is similar besides that this script generates a gexf graph instead o
 
 truthfilter.py:
 short filter script to truncate out the needed groundtruth within a certain period, in order to do comparison with calucalted result.
-
-The sample directory:
-This directory contains some sample input and out file for the whole computing process of this project.
