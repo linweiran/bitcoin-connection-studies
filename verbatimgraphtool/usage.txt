@@ -15,6 +15,8 @@ similar to readinv_2.py, but this script only prints to the console and hence is
 passivelistener.py:
 addrmap.csv and sample.txt are required for this script
 This script does the "simple voting" part as descirbed at the very beginning. Two threadholds value is set at the very beginning and should be adjusted according to each experiement setting. The output generated is a dot graph.
+count threshold is how many counts from beginning do we accept from the beginning o eah transaction.
+vote threshold is how many votes a connection need to have in order to be taken as a connection in the connection. 
 
 gexfgenerator.py:
 Every thing is similar besides that this script generates a gexf graph instead of a dot graph ultimately.

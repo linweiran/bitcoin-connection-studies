@@ -1,0 +1,19 @@
+This project aims to develop a method smarter than the intrinsic "1 vote for each pair of adjacent bitcoin messages", to measure the topology of bitcoin nodes. Simulation is introduced here in order to build the model with full control. Some parameters of the simulation is taken by measurement on real-world data by using the coinscope tool.This measurement script is in the logger directory and just modifications of already existing bitcoin python package. It counts the number of transactions per minute and this data is used in the following simulation.
+
+simulator.py: simulate the bitcoin world and verbatimlogs with randomly generated transactions, delays and dynamic connections. This simulation is built from scratch. All settings in the test is listed in the constant part at the very beginning of the script. Notice that in time unit, 1 time unit in the script(and all above) represents to 0.05 seconds.
+
+warmup: The very beginning of the simluation is not used in calculation fair for guess, as there are very few transaction message in the starting up stage and should be excluded from the tests.
+
+meausurement.py:old measurement sript(as the intrinsic method, similar to the one used in verbatimgraphtool, need to input both thresholds.) 
+
+mesurement-test.py: latest computing version, need a weight table. We use a probablity table to compute the possible number of hops from where the transaction happens, given the time information.
+
+exponential.py:exponential delay propagation model over various maps and trials. We assume that the exponential delay added at each node plays the major rule in time delays. It is taken as the accumulation of individual trials as the overall test results. 
+
+exponential-normalizer.py:normalize the counts mentioned above to produce the probablity distribution 
+
+exponential-verbatim.py: still an exponential delay model, but specifically from the perspective of coinscope
+
+graph.py:graph tool used to draw relationship between false positive vs false negative
+
+active/inject.py: simluation using active measurement, injecting transaction to known nodes. Testing our method of computing within this ability. 
